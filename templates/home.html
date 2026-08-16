@@ -6,8 +6,15 @@
 </head>
 
 <body>
-    <h1>Welcome to JobTracker</h1>
-    <p>This page is being served from a template file.</p>
+    <h1>Your applications</h1>
+
+    <a href="{{ url_for('add') }}">+ Add application</a>
+
+    <ul>
+        {% for app in applications %}
+        <li>{{ app.company }} - {{ app.role }} ({{ app.status }})</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>

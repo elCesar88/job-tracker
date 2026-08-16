@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add application - JobTracker</title>
+</head>
+
+<body>
+    <h1>Add an application</h1>
+
+    <form method="post">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="role">Role</label>
+        <input type="text" id="role" name="role" required>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="Applied">Applied</option>
+            <option value="Interviewing">Interviewing</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+
+        <label for="date_applied">Date applied</label>
+        <input type="date" id="date_applied" name="date_applied" required>
+
+        <button type="submit">Add application</button>
+    </form>
+</body>
+
+</html>
