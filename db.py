@@ -40,3 +40,28 @@ def get_all_applications():
     rows = conn.execute("SELECT * FROM applications").fetchall()
     conn.close()
     return [dict(row) for row in rows]
+
+
+def get_application(app_id):
+    conn = get_connection()
+    row = conn.execute(
+        "SELECT * FROM applications WHERE id = ?", (app_id,)).fetchone()
+    conn.close()
+    return dict(row) if row else None
+
+
+def update_application(app_id, company, role, status, date_applied):
+    conn = get_connection()
+    conn.execute(
+        "UPDATE applications SET company = ?, role = ?, status = ?, date_applied = ? WHERE id = ? ",
+        (company, role, status, date_applied, app_id)
+    )
+    conn.commit()
+    conn.close()
+
+
+def delete_application(app_id):
+    conn = get_connection()
+    conn.execute("DELETE FROM applications WHERE id = ? ", (app_id,))
+    conn.commit()
+    conn.close()

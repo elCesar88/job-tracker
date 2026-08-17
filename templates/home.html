@@ -12,7 +12,10 @@
 
     <ul>
         {% for app in applications %}
-        <li>{{ app.company }} - {{ app.role }} ({{ app.status }})</li>
+        <li>
+            {{ app.company }} - {{ app.role }} ({{ app.status }})
+            <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
+        </li>
         {% endfor %}
     </ul>
 </body>
