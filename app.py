@@ -42,3 +42,12 @@ def edit(app_id):
         return redirect(url_for("home"))
 
     return render_template("edit.html", application=application)
+
+
+@app.route("/delete/<int:app_id>", methods=["POST"])
+def delete(app_id):
+    application = db.get_application(app_id)
+    if application is None:
+        abort(404)
+    db.delete_application(app_id)
+    return redirect(url_for("home"))

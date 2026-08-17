@@ -42,6 +42,9 @@ def get_all_applications():
     return [dict(row) for row in rows]
 
 
+0
+
+
 def get_application(app_id):
     conn = get_connection()
     row = conn.execute(
