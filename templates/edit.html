@@ -4,7 +4,7 @@
 {% block content %}
 <h1>Eddit application</h1>'
 
-<form method="post">
+<form method="post" class="app-form">
     <label for="company">Company</label>
     <input type="text" id="company" name="company" value="{{ application.company }}" required>
 
@@ -23,6 +23,6 @@
     <label for="date_applied">Date applied </label>
     <input type="date" id="date_applied" name="date_applied" value="{{ application.date_applied }}" required>
 
-    <button type="submit">Save changes</button>
+    <button type="submit" class="btn">Save changes</button>
 </form>
 {% endblock %}

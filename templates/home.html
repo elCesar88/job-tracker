@@ -12,10 +12,10 @@
             <span class="status-pill status-{{ app.status|lower }}">{{ app.status }}</span>
         </div>
         <div class="app-actions">
-            <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
+            <a href="{{ url_for('edit', app_id=app.id) }}" class="link-action">Edit</a>
             <form action="{{ url_for('delete', app_id=app.id) }}" method="post" style="display:inline;"
                 onsubmit="return confirm('Delete this application?');">
-                <button type="submit">Delete</button>
+                <button type="submit" class="link-action link-danger">Delete</button>
             </form>
         </div>
     </li>
