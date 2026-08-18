@@ -18,7 +18,7 @@ This code creates a list of jobs that I have applied to, it helps me keep track 
 
 ## Screenshot
 
-[you'll add this after — see note below]
+![screenshot](docs/screenshot.png)
 
 ## Running it locally
 
@@ -33,11 +33,19 @@ flask --app app run --debug
 
 ## Live demo
 
-[link goes here once deployed — next step]
+(https://job-tracker-hjxm.onrender.com/)
+
+## Deploying
+
+Deployed on Render's free tier. Note: free instances spin down after 15
+minutes of inactivity (the first request after that takes ~30-60s to wake
+up), and the SQLite database resets on every redeploy since the free tier
+doesn't have persistent disk. This deployment is for demoing the app —
+the local version is what I actually use to track my own applications.
 
 ## What I learned
 
-- Flask routing, how to comunicate between my pages
+- Flask routing, how to communicate between my pages
 - Parameterized SQL queries
-- How to debug following the errors showd by the browser or the terminal
+- How to debug following the errors shown by the browser or the terminal
 - Proper page styling
