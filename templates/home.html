@@ -1,27 +1,19 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Your application - JobTracker{% endblock %}
 
-<head>
-    <meta charset="utf-8" <title>JobTracker</title>
-</head>
+{% block content %}
+<h1>Your applications</h1>
 
-<body>
-    <h1>Your applications</h1>
-
-    <a href="{{ url_for('add') }}">+ Add application</a>
-
-    <ul>
-        {% for app in applications %}
-        <li>
-            {{ app.company }} - {{ app.role }} ({{ app.status }})
-            <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
-            <form action="{{ url_for('delete', app_id=app.id) }}" method="post" style="display:inline;"
-                onsubmit="return confirm('Delete this application?');">
-                <button type="submit">Delete</button>
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+<ul>
+    {% for app in applications %}
+    <li>
+        {{ app.company }} - {{ app.role }} ({{ app.status }})
+        <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
+        <form action="{{ url_for('delete', app_id=app.id) }}" method="post" style="display:inline;"
+            onsubmit="return confirm('Delete this application?');">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Add application - JobTracker{% endblock %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Add application - JobTracker</title>
-</head>
+{% block content %}
+<h1>Add an application</h1>
 
-<body>
-    <h1>Add an application</h1>
+<form method="post">
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company" required>
 
-    <form method="post">
-        <label for="company">Company</label>
-        <input type="text" id="company" name="company" required>
+    <label for="role">Role</label>
+    <input type="text" id="role" name="role" required>
 
-        <label for="role">Role</label>
-        <input type="text" id="role" name="role" required>
+    <label for="status">Status</label>
+    <select id="status" name="status">
+        <option value="Applied">Applied</option>
+        <option value="Interviewing">Interviewing</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+    </select>
 
-        <label for="status">Status</label>
-        <select id="status" name="status">
-            <option value="Applied">Applied</option>
-            <option value="Interviewing">Interviewing</option>
-            <option value="Offer">Offer</option>
-            <option value="Rejected">Rejected</option>
-        </select>
+    <label for="date_applied">Date applied</label>
+    <input type="date" id="date_applied" name="date_applied" required>
 
-        <label for="date_applied">Date applied</label>
-        <input type="date" id="date_applied" name="date_applied" required>
-
-        <button type="submit">Add application</button>
-    </form>
-</body>
-
-</html>
+    <button type="submit">Add application</button>
+</form>
+{% endblock %}Ks

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}JobTracker{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">JobTracker</a>
+        <a href="{{ url_for('add') }}">Add application</a>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
