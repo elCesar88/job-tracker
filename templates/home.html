@@ -7,12 +7,17 @@
 <ul>
     {% for app in applications %}
     <li>
-        {{ app.company }} - {{ app.role }} ({{ app.status }})
-        <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
-        <form action="{{ url_for('delete', app_id=app.id) }}" method="post" style="display:inline;"
-            onsubmit="return confirm('Delete this application?');">
-            <button type="submit">Delete</button>
-        </form>
+        <div class="app-info">
+            <strong>{{ app.company }}</strong> - {{ app.role }}
+            <span class="status-pill status-{{ app.status|lower }}">{{ app.status }}</span>
+        </div>
+        <div class="app-actions">
+            <a href="{{ url_for('edit', app_id=app.id) }}">Edit</a>
+            <form action="{{ url_for('delete', app_id=app.id) }}" method="post" style="display:inline;"
+                onsubmit="return confirm('Delete this application?');">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
     </li>
     {% endfor %}
 </ul>
